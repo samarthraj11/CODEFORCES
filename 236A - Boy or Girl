@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    string a;
+    cin>>a;
+    int cnt=0;
+    for(int i=0;i<a.size();i++)
+    {
+        for(int j=i+1;j<a.size();j++)
+        {
+            if(a[i]==a[j])
+            {
+
+                cnt++;
+                break;
+            }
+        }
+    }
+
+    if((a.size()-cnt)%2==0)
+    {
+        cout<<"CHAT WITH HER!"<<endl;
+    }
+    else
+    {
+        cout<<"IGNORE HIM!"<<endl;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
+
+
+
+
