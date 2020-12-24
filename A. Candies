@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int k,w,sum=0;
+    int n,m,x,z,y;
+    cin>>n>>m;
+    int a[m];
+    for(int i=0;i<m;i++)
+    {
+        a[i]=n/m;
+    }
+    x=n%m;
+    for(int i=0;i<x;i++)
+    {
+        a[i]+=1;
+    }
+    for(int i=0;i<m;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+
+
+
+
+
+    return 0;
+}
