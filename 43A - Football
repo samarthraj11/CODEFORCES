@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char c;
+    int  n,cnt=0;
+    cin>>n;
+
+    string a[n],sam,ash;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==a[0])
+        {
+            cnt++;
+            sam=a[i];
+
+        }
+        else
+        {
+            ash=a[i];
+        }
+
+    }
+    if(cnt>n/2)
+    {
+        cout<<sam<<endl;
+    }
+    else
+    {
+        cout<<ash<<endl;
+    }
+
+
+
+
+    return 0;
+}
