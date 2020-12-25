@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int k,cnt=0,y,z;
+   cin>>k;
+   int a[12];
+   for(int i=0;i<12;i++)
+   {
+       cin>>a[i];
+   }
+   sort(a,a+12,greater<>());
+
+   int x=0;
+   int sum=0;
+
+
+    for(int i=0;i<12;i++)
+    {
+        if(sum<k)
+        {
+            sum=sum+a[i];
+            cnt++;
+        }
+    }
+
+    if(sum>=k)
+    {
+        cout<<cnt<<endl;
+    }
+    else
+    {
+        cout<<-1<<endl;
+    }
+
+
+    return 0;
+}
