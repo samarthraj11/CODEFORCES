@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+
+{
+
+
+  int t;
+  cin>>t;
+  while(t--)
+  {
+      int n,m,r,c,a,b,z,d,e,f;
+      cin>>n>>m>>r>>c;
+
+      a=(max(r,1)-min(r,1))+(max(c,1)-min(c,1));
+      b=(max(r,n)-min(r,n))+(max(c,1)-min(c,1));
+      z=(max(r,1)-min(r,1))+(max(c,m)-min(c,m));
+      d=(max(r,n)-min(r,n))+(max(c,m)-min(c,m));
+      e=max(a,max(b,max(z,d)));
+
+      cout<<e<<endl;
+  }
+
+
+
+    return 0;
+}
