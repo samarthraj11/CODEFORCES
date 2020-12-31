@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void jai_bajrangbali()
+{
+    int n,k;
+   cin>>n>>k;
+   while(k--)
+   {
+       if(n%10==0)
+       {
+           n=n/10;
+       }
+       else
+       {
+           n=n-1;
+       }
+   }
+   cout<<n<<endl;
+
+
+
+
+
+
+
+}
+
+
+
+
+int main()
+{
+    //int t;
+   // cin>>t;
+    //while(t--)
+    {
+
+
+
+    }
+jai_bajrangbali();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	return 0;
+
+}
