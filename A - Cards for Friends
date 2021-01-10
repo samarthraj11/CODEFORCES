@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void jai_bajrangbali()
+{
+    int w,h,n,cnt=1,res=1;
+    cin>>w>>h>>n;
+    if(n==1)
+    {
+        cout<<"YES"<<endl;
+
+    }
+    else
+    {
+
+
+    while(w%2==0)
+    {
+        w=w/2;
+        cnt=cnt*2;
+    }
+    while(h%2==0)
+    {
+        h=h/2;
+        cnt=cnt*2;
+    }
+
+
+
+    if((cnt)>=n)
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+    }
+
+}
+
+
+
+
+
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        jai_bajrangbali();
+
+    }
+
+
+
+
+
+
+
+
+	return 0;
+
+}
