@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    long long c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    int sum=0;
+    //int a[n];
+    bool ash=false;
+    string s;
+
+    cin>>n;
+    int a[n],b[n];
+
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i]>>b[i];
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]!=b[i])
+        {
+            cout<<"rated"<<endl;
+            return 0;
+        }
+        else
+        {
+            cnt++;
+        }
+    }
+
+    for(int i=0;i<n-1;i++)
+    {
+        if(a[i]<a[i+1])
+        {
+            cout<<"unrated"<<endl;
+            return 0;
+        }
+    }
+    cout<<"maybe"<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
