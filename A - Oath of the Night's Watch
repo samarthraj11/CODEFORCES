@@ -30,6 +30,7 @@ void jai_bajrangbali()
     }
     else
     {
+        
         cout<<n-cnt<<endl;
     }
 
