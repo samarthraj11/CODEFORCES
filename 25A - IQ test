@@ -31,7 +31,8 @@ void jai_bajrangbali()
             }
         }
     }
-    else
+   
+   else
     {
         for(int i=1;i<=n;i++)
         {
