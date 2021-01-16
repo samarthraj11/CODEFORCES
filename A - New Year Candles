@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    long long b,c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    int sum=0;
+    //int a[n];
+    bool ash=false;
+    string s;
+    int a;
+    cin>>a>>b;
+    x=a;
+    while(x>=b)
+    {
+        cnt=cnt+x/b;
+
+        x=(x/b)+(x%b);
+
+    }
+    cout<<a+cnt<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
