@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    long long b,c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    cin>>n>>b;
+    int a[n];
+    bool ash=false;
+    string s;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    int sum=0;
+   for(int i=0;i<n;i++)
+   {
+       if(b%a[i]==0)
+       {
+           cnt=a[i];
+       }
+       mx=max(mx,cnt);
+   }
+
+   cout<<b/mx<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
