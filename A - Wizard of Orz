@@ -3,6 +3,7 @@
 #define ld long double
 #define sz size()
 #define lulu for(int i=0;i<n;i++)
+
 using namespace std;
 
 
