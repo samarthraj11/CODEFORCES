@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+#include <cmath>
+#define ll long long
+#define ld long double
+#define sz size()
+#define lulu for(int i=0;i<n;i++)
+using namespace std;
+
+
+int main()
+{
+
+    ld a,b,n,xd,yd,dist,x,y,v;
+    ld mint=INT_MAX;
+
+
+
+    cin>>a>>b>>n;
+    lulu
+    {
+        cin>>x>>y>>v;
+        dist=pow(((pow((a - x), 2)) + (pow((b - y), 2))), 0.5);
+        ld time=dist/v;
+
+        mint=min(time,mint);
+
+
+
+
+    }
+
+    cout<<setprecision(19)<<mint<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
