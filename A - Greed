@@ -1,0 +1,68 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lulu for(int i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    cin>>n;
+    ll a[n],b[n],c[n];
+    bool ash=false;
+    string s;
+    lulu
+    {
+        cin>>a[i];
+        cnt=cnt+a[i];
+
+    }
+    lulu
+    {
+        cin>>b[i];
+    }
+    sort(b,b+n,greater<>());
+    sum=b[0]+b[1];
+    
+
+    if(sum>=cnt)
+    {
+        ct<<"YES"<<ed;
+    }
+    else
+    {
+        ct<<"NO"<<ed;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
