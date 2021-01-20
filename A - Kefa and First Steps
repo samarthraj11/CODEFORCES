@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lulu for(int i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+int main()
+{
+
+    int c,d,e,n,f,x,y,z,cnt=1,res=0,mx=1;
+    int sum=0,maxi=0,mini=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    int a[n];
+    lulu
+    {
+        cin>>a[i];
+    }
+    if(n==1)
+    {
+        ct<<1<<ed;
+        return 0;
+    }
+
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]>=a[i-1])
+        {
+            cnt++;
+        }
+        else
+        {
+            mx=max(mx,cnt);
+            cnt=1;
+        }
+        mx=max(mx,cnt);
+
+
+    }
+    ct<<mx<<ed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
