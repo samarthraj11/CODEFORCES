@@ -1,0 +1,86 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define sz size()
+#define pb push_back
+#define lulu for(int i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+void jai_bajrangbali()
+{
+    int c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    int sum=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    //int a[n];
+    if(n%2==0)
+    {
+        x=n/2;
+        while(x--)
+        {
+            ct<<1;
+        }
+        ct<<ed;
+    }
+
+    else
+    {
+        if(n==3)
+        {
+            ct<<7<<ed;
+        }
+        else
+
+        {
+            f=n-3;
+            x=f/2;
+            ct<<7;
+            while(x--)
+            {
+                ct<<1;
+            }
+
+            ct<<ed;
+
+        }
+    }
+
+
+}
+
+int main()
+{
+    long long t;
+    cin>>t;
+
+    while(t--)
+    {
+
+        jai_bajrangbali();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
