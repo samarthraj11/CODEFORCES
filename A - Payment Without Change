@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define sz size()
+#define pb push_back
+#define lulu for(int i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    ll a,b,s;
+    //cin>>n;
+    //ll a[n];
+    cin>>a>>b>>n>>s;
+    sum=(a*n)+b;
+    if(sum>=s)
+    {
+        x=s%n;
+        if(b>=x)
+        {
+            ct<<"YES"<<ed;
+        }
+        else
+        {
+            ct<<"NO"<<ed;
+        }
+    }
+
+    else
+    {
+        ct<<"NO"<<ed;
+    }
+
+
+}
+
+int main()
+{
+    long long t;
+    cin>>t;
+
+    while(t--)
+    {
+
+        jai_bajrangbali();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
