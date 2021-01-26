@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lala for(ll i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>f;
+    ll a[n];
+    lala
+    {
+        cin>>a[i];
+    }
+
+    ll maxi=INT_MIN;
+
+    lala
+    {
+        a[i]=a[i]/(f+0.000001);
+
+        maxi=max(maxi,a[i]);
+    }
+
+    for(ll i=n-1;i>=0;i--)
+    {
+        if(a[i]==maxi)
+        {
+            ct<<i+1<<ed;
+            return 0;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
