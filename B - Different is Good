@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lala for(ll i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    //cin>>n;
+    //ll a[n];
+
+    cin>>n>>s;
+
+
+    if(n>26)
+    {
+        ct<<-1<<ed;
+        return 0;
+    }
+
+
+    for(ll i=0;i<n;i++)
+    {
+        for(ll j=i+1;j<n;j++)
+        {
+            if(s[i]==s[j])
+            {
+                cnt++;
+                break;
+
+            }
+        }
+    }
+
+
+    ct<<cnt<<ed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
