@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lala for(ll i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll c,d,e,n,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>s;
+    //ll a[n];
+
+
+    while(s.sz!=1)
+    {
+        sum=0;
+
+        for(ll i=0;i<s.sz;i++)
+        {
+            sum=sum+(s[i]- '0');
+        }
+
+        s=to_string(sum);
+
+        cnt++;
+    }
+
+    ct<<cnt<<ed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
