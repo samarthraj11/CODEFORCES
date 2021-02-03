@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lala for(ll i=0;i<n;i++)
+#define ed endl
+#define ct cout
+using namespace std;
+
+
+void jai_bajrangbali()
+{
+    ll c,a,b,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    //cin>>n;
+    //ll a[n];
+    cin>>x>>y;
+    cin>>a>>b;
+
+    f=max(x,y)-min(x,y);
+
+    z=min(x,y);
+
+    c=(f*a)+(z*b);
+
+    n=(x+y)*a;
+
+    ct<<min(n,c)<<ed;
+
+
+}
+
+int main()
+{
+    long long t;
+    cin>>t;
+
+    while(t--)
+    {
+
+        jai_bajrangbali();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
