@@ -1,0 +1,111 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define pb push_back
+#define ld long double
+#define sz size()
+#define lala for(ll i=0;i<n;i++)
+#define ed endl
+#define ct cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll c,d,e,n,f,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+
+    cin>>n;
+    ll a[n];
+
+    vector <int> v,w,x;
+    lala
+    {
+        cin>>f;
+        x.pb(f);
+    }
+
+
+    sort(x.begin(),x.end());
+
+    for(ll i=0;i<x.sz;i++)
+    {
+        if(x[i]==x[i+1])
+        {
+            cnt++;
+        }
+        else
+        {
+            cnt=0;
+        }
+        res=max(res,cnt);
+
+    }
+
+    if(res>1)
+    {
+        ct<<"NO"<<ed;
+        return 0;
+    }
+
+
+    lala
+    {
+
+        if(x[i]==x[i+1])
+        {
+
+            v.pb(x[i]);
+
+        }
+        else
+        {
+            w.pb(x[i]);
+        }
+    }
+
+    ct<<"YES"<<ed;
+    ct<<v.sz<<ed;
+
+    for(ll i=0;i<v.sz;i++)
+    {
+        ct<<v[i]<< " ";
+    }
+    ct<<ed;
+
+    ct<<w.sz<<ed;
+    reverse(w.begin(),w.end());
+
+    for(ll i=0;i<w.sz;i++)
+    {
+        ct<<w[i]<< " ";
+    }
+    ct<<ed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
