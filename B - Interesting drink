@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+    int c,d,e,n,x,i=0,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    vector<int> a;
+    ll maxi=INT_MIN;
+    lala
+    {
+
+        cin>>d;
+        a.pb(d);
+
+    }
+    sort(a.begin(),a.end());
+    ll q;
+    cin>>q;
+    while(q--)
+    {
+        cin>>x;
+        int f=upper_bound(a.begin(),a.end(),x)-a.begin();
+        ct<<f<<ed;
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
