@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+using namespace std;
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    ll a[n];
+    lala
+    {
+        cin>>a[i];
+        if(a[i]%2==0)
+        {
+            cnt++;
+        }
+    }
+    sort(a,a+n);
+    lala
+    {
+        if(a[i]+1==a[i+1])
+        {
+            sum++;
+        }
+    }
+
+    res=n-cnt;
+
+    if(sum>0)
+    {
+        ct<<"YES"<<ed;
+    }
+    else if(cnt%2==0)
+    {
+        ct<<"YES"<<ed;
+
+    }
+
+    else
+    {
+        ct<<"NO"<<ed;
+
+    }
+
+
+}
+
+int main()
+{
+    long long t;
+    cin>>t;
+
+    while(t--)
+    {
+
+        jai_bajrangbali();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
