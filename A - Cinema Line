@@ -1,0 +1,99 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    ll a[n];
+    lala
+    {
+        cin>>a[i];
+    }
+    ll sum50=0,kam25=0;
+    for(ll i=0;i<n;i++)
+    {
+        if(a[i]==50)
+        {
+            if(kam25<25)
+            {
+                ct<<"NO"<<ed;
+                return 0;
+            }
+            else
+            {
+                kam25-=25;
+                sum50+=50;
+            }
+        }
+
+        else if(a[i]==100)
+        {
+            if(sum50>=50 && kam25>=25)
+            {
+                sum50=sum50-50;
+                kam25=kam25-25;
+                continue;
+            }
+
+            else if(kam25>=75)
+            {
+                kam25=kam25-75;
+                continue;
+            }
+
+            else
+            {
+                ct<<"NO"<<ed;
+                return 0;
+            }
+
+
+        }
+         else
+            {
+                kam25+=25;
+            }
+
+
+
+
+    }
+
+
+    ct<<"YES"<<ed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
