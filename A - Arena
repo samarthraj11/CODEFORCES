@@ -1,0 +1,103 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+using namespace std;
+
+
+void jai_bajrangbali()
+{
+    ll k,c,d,e,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>k;
+    ll a[n],b[n];
+    for(ll i=1;i<=n;i++)
+    {
+        b[i]=i;
+        a[i]=n-i+1;
+
+    }
+    for(ll i=1;i<=n;i++)
+    {
+        ct<<b[i]<< " ";
+    }
+    ct<<ed;
+
+    for(ll i=1;i<=k;i++)
+    {
+        if(a[i]==b[i])
+        {
+
+            for(ll j=i;j<=k;j++)
+            {
+                b[j]++;
+                if(b[j]>n)
+                {
+                    b[j]=b[j]-n;
+                }
+
+
+            }
+
+
+        }
+    }
+    for(ll i=1;i<=n;i++)
+    {
+
+        ct<<b[i]<< " ";
+    }
+    ct<<ed;
+    if(k<=n)
+    {
+        x=k;
+    }
+    else
+    {
+        x=k%n;
+    }
+    ct<<b[x]<<ed;
+    ct<<b[n-x]<<ed;
+
+
+
+
+}
+
+int main()
+{
+    long long t;
+    cin>>t;
+
+    while(t--)
+    {
+
+        jai_bajrangbali();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
