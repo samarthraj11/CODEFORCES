@@ -17,6 +17,7 @@ void jai_bajrangbali()
     string s;
     cin>>n;
     ll a[n];
+    
     lala
     {
         cin>>a[i];
