@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+using namespace std;
+
+
+void jai_bajrangbali()
+{
+        ll a,b,x,y,n;
+        cin>>a>>b>>x>>y>>n;
+        ll n1, n2;
+        if(a-x+b-y<= n){
+            ct<<x*y<<ed;
+        }
+        else{
+            if(a-x>=n){
+            n1=a-n;
+            n1=n1*b;
+            }
+            else{
+                int l= n-(a-x);
+                n1=x;
+                n1 = n1*(b-l);
+            }
+            if(b-y>=n){
+                n2=b-n;
+                n2=n2*a;
+            }
+            else{
+                int l= n-(b-y);
+                n2=y;
+                n2 = n2*(a-l);
+            }
+            ct<<min(n1, n2)<<ed;
+        }
+
+}
+
+int main()
+{
+    long long t;
+    cin>>t;
+
+    while(t--)
+    {
+
+        jai_bajrangbali();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
