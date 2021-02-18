@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+
+using namespace std;
+
+
+int main()
+{
+
+    ll c,d,k,n,f,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>k;
+    ll a[n];
+    memset(a,0,sizeof(a));
+    for(ll i=1;i<=n;i++)
+    {
+
+
+        cin>>a[i];
+        a[i]=a[i]+a[i-1];
+
+    }
+    lala
+    {
+        //ct<<a[i]<< " ";
+    }
+    
+    ll mini=INT_MAX;
+    for(ll i=0;i<=(n-k);i++)
+    {
+        x=a[i+k]-a[i];
+        mini=min(mini,x);
+        if(mini==x)
+        {
+            d=i+1;
+        }
+    }
+
+    ct<<d<<ed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
