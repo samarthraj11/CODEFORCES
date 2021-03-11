@@ -1,0 +1,124 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+#define vi   vector<ll>
+#define vc   vector<char>
+#define ff   first
+#define ss   second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,k,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>k;
+    //ll a[n];
+    cin>>s;
+    ll f0=101,f1=101,l1=-1,l0=-1;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i]=='0')
+        {
+            f0=i+1;
+            break;
+        }
+
+    }
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i]=='1')
+        {
+            f1=i+1;
+            break;
+        }
+
+    }
+    for(ll i=n-1;i>=0;i--)
+    {
+        if(s[i]=='0')
+        {
+            l0=i+1;
+            break;
+        }
+    }
+    for(ll i=n-1;i>=0;i--)
+    {
+        if(s[i]=='1')
+        {
+            l1=i+1;
+            break;
+        }
+    }
+
+    /*
+   ct<<f0<< " "<<f1<<ed;
+   ct<<l0<< " "<<l1<<ed;
+   */
+
+
+    while(k--)
+    {
+        cin>>x>>y;
+        ash=0;
+        bool sam=0;
+        if(s[x-1]=='0' && f0<x)
+        {
+            ash=1;
+            //ct<< "pehlazero"<<ed;
+        }
+        if(s[x-1]=='1' && f1<x)
+        {
+            ash=1;
+            //ct<< "pehlaone"<<ed;
+        }
+        if(s[y-1]=='0' && l0>y)
+        {
+            sam=1;
+           // ct<< "lastzero"<<ed;
+        }
+        if(s[y-1]=='1' && l1>y)
+        {
+            sam=1;
+            //ct<< "lastone"<<ed;
+        }
+        //ct<<ash<< " "<<sam<<ed;
+        if(sam || ash)
+        {
+            ct<< "YES"<<ed;
+        }
+        else
+        {
+            ct<< "NO"<<ed;
+        }
+    }
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    cin>>t;
+    //t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
