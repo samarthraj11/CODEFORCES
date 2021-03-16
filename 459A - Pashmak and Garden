@@ -1,0 +1,92 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+#define vi   vector<ll>
+#define vc   vector<char>
+#define ff   first
+#define ss   second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,k,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    ll  x1,y1,x2,y2 ;
+    string s;
+    cin>>x1>>y1>>x2>>y2;
+    //ll a[n];
+
+    if(abs(x2-x1)==abs(y2-y1))
+    {
+        ct<<x1<< " "<<y2<< " "<<x2<< " "<<y1<<ed;
+        return;
+    }
+
+    vi v;
+    v.pb(x1);
+    v.pb(y1);
+    v.pb(x2);
+    v.pb(y2);
+
+    for(ll i=0;i<4;i++)
+    {
+        for(ll j=i+1;j<4;j++)
+        {
+            if(v[i]==v[j])
+            {
+                ash=1;
+                break;
+            }
+        }
+    }
+    if(ash)
+    {
+        x=max(abs(x2-x1),abs(y2-y1));
+        if(x1==x2)
+        {
+            ct<<x2+x<< " "<<y2<< " "<<x1+x<< " "<<y1<<ed;
+        }
+        else if(y1==y2)
+        {
+            ct<<x1<< " "<<y1+x<< " "<<x2<< " "<<y2+x<<ed;
+        }
+        else
+        {
+            ct<<-1<<ed;
+        }
+
+
+    }
+    else
+    {
+        ct<<-1<<ed;
+    }
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    //cin>>t;
+    t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
