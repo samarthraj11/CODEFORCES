@@ -1,0 +1,95 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+#define vi   vector<ll>
+#define vc   vector<char>
+#define ff   first
+#define ss   second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,k,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    //ll a[n];
+    map<ll,ll>mp;
+    vi v;
+    cin>>d;
+    ll a[d];
+    for(ll i=0;i<d;i++)
+    {
+        cin>>a[i];
+        v.pb(a[i]);
+
+    }
+    cin>>z;
+    ll b[z];
+    for(ll i=0;i<z;i++)
+    {
+        cin>>b[i];
+        v.pb(b[i]);
+    }
+    for(auto i:v)
+    {
+        mp[i]++;
+    }
+    for(auto i:mp)
+    {
+        //ct<<i.ff<< " "<<i.ss<<ed;
+    }
+
+
+    if(mp.sz<n)
+    {
+        ct<<"Oh, my keyboard!" <<ed;
+        return;
+    }
+     x=1;
+
+    for(auto i:mp)
+    {
+
+        //ct<<i.ff<< " "<<i.ss<<ed;
+        if(i.ff != x)
+        {
+            ct<< "Oh, my keyboard!"<<ed;
+            return;
+
+        }
+        x++;
+    }
+
+    ct<<"I become the guy."<<ed;
+
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    //cin>>t;
+    t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
