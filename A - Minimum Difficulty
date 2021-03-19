@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+#define ll   long long
+#define pb   push_back
+#define ld   long double
+#define sz   size()
+#define lala for(ll i=0;i<n;i++)
+#define ed   "\n"
+#define ct   cout
+#define vi   vector<ll>
+#define vc   vector<char>
+#define ff   first
+#define ss   second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,k,x,y,z,cnt=INT_MIN,res=0,mx=INT_MAX;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n;
+    ll a[n];
+    lala
+    {
+        cin>>a[i];
+    }
+    //vi v;
+
+    for(ll i=0;i<n-2;i++)
+    {
+        x=a[i]-a[i+2];
+        x=x*(-1);
+        mx=min(mx,x);
+
+    }
+    for(ll i=0;i<n-1;i++)
+    {
+        z=a[i]-a[i+1];
+        z=z*(-1);
+        cnt=max(cnt,z);
+    }
+    //ct<<mx<< " "<<cnt<<ed;
+
+    ct<<max(cnt,mx)<<ed;
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    //cin>>t;
+    t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
