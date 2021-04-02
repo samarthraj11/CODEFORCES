@@ -33,6 +33,7 @@ void jai_bajrangbali()
     {
         cin>>a[i];
     }
+    
 
     cnt=-1;
 
