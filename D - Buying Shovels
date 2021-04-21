@@ -1,0 +1,107 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+bool prime_h(ll n)
+{
+    for(ll i=2;i*i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,k,x,y,z,cnt=0,res=0,mx=INT_MAX;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>k;
+    //ll a[n];
+
+
+    if(k>=n)
+    {
+        ct<< 1<<ed;
+        return ;
+    }
+    if(k==1)
+    {
+        ct<<n<<ed;
+        return ;
+    }
+    if(prime_h(n))
+    {
+        ct<<n<<ed;
+        return ;
+
+    }
+
+    if(k>=n/2 && n%2==0)
+    {
+        ct<<2<<ed;
+        return ;
+    }
+
+    x=n;
+    ll maxi;
+    for(ll i=2;i*i<=n && i<=k ;i++)
+    {
+        if(x%i==0)
+        {
+            ash=1;
+            maxi=i;
+            if(x<=k*i)
+            {
+                mx=min(mx,i);
+
+            }
+        }
+    }
+
+    if(!ash)
+    {
+        ct<<n<<ed;
+        return ;
+    }
+
+    ct<<min(mx,x/maxi)<<ed;
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    cin>>t;
+    //t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
