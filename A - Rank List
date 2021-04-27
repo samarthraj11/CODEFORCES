@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+bool cmp ( pll  &p1, pll &p2)
+{
+    if(p1.ff>p2.ff)
+    {
+        return 1;
+    }
+    else if(p1.ff==p2.ff)
+    {
+        return (p1.ss<p2.ss);
+
+    }
+
+    return 0;
+}
+
+
+void jai_bajrangbali()
+{
+    ll c,d,e,n,k,x,y,z,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>k;
+    //ll a[n];
+    vector<pll> v;
+
+    for(ll i=0;i<n;i++)
+    {
+        cin>>x>>y;
+        v.pb(m_p(x,y));
+    }
+
+    sort(v.begin(),v.end(),cmp);
+
+    ll ans=0;
+
+    ll p,q;
+    p=v[k-1].ff;
+    q=v[k-1].ss;
+
+    //ct<<p<< " "<<q<<ed;
+
+    for(ll i=0;i<n;i++)
+    {
+        if(v[i].ff==p && v[i].ss==q)
+        {
+            cnt++;
+        }
+    }
+
+    ct<<cnt<<ed;
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    //cin>>t;
+    t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
