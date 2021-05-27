@@ -1,0 +1,91 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>n>>s;
+    //ll a[n];
+
+    vi v;
+
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i]=='4')
+        {
+            v.pb(3);
+            v.pb(2);
+            v.pb(2);
+        }
+        else if(s[i]=='6')
+        {
+            v.pb(5);
+            v.pb(3);
+
+        }
+        else if(s[i]=='9')
+        {
+            v.pb(7);
+            v.pb(3);
+            v.pb(3);
+            v.pb(2);
+
+        }
+        else if(s[i]=='8')
+        {
+            v.pb(7);
+            v.pb(2);
+            v.pb(2);
+            v.pb(2);
+        }
+        else if(s[i] != '1' && s[i] != '0')
+        {
+
+            v.pb(s[i]-'0');
+        }
+    }
+
+    sort(v.begin(),v.end(),greater<>());
+
+    for(auto i:v)
+    {
+        ct<<i;
+    }
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    //cin>>t;
+    t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
