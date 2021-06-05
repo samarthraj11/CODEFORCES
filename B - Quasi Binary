@@ -53,6 +53,12 @@ void jai_bajrangbali()
         p.erase(p.begin()+ p.sz-1);
 
     }
+    
+    /*
+    v jo pair vector h usme sirf store kiya h ki konsa sa number kitne baar multiply hua h jaise 534==5*100 , 3*10 , 4*1;
+    aur baaki to dekh to smjh aa hi rha hoga 
+                                                                                                        
+    */
 
 
     sort(v.begin(),v.end());
