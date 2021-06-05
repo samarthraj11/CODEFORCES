@@ -1,0 +1,84 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>s;
+    //ll a[n];
+
+    char ch='a';
+    n=s.sz;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i]<=ch)
+        {
+            s[i]=ch;
+            ch++;
+
+        }
+
+    }
+
+     ch='a';
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i]==ch)
+        {
+            cnt++;
+            ch++;
+        }
+        if(s[i]>'z')
+        {
+            s[i]='z';
+        }
+
+    }
+
+//    ct<<cnt<<ed;
+
+    if(cnt>=26)
+    {
+        ct<<s<<ed;
+        return ;
+    }
+
+    ct<<-1<<ed;
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    //cin>>t;
+    t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
