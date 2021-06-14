@@ -1,0 +1,85 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    ll d;
+    bool ash=false;
+    string s;
+    cin>>n>>x>>y>>d;
+    //ll a[n];
+    if(abs(x-y)%d != 0 && (y-1)%d != 0 && (n-y)%d != 0)
+    {
+        ct<<-1<<ed;
+        return ;
+    }
+    ll ans1=INT_MAX,ans2=INT_MAX,ans3=INT_MAX;
+    if((y-x)%d==0)
+    {
+        ans1=(y-x)/d;
+    }
+
+    if((y-1)%d==0)
+    {
+        ans2=((x-1)/d)+((y-1)/d);
+        if((x-1)%d != 0)
+        {
+            ans2++;
+        }
+    }
+
+    if((n-y)%d==0)
+    {
+        ans3=((n-x)/d)+(n-y)/d;
+        if((n-x)%d != 0)
+        {
+            ans3++;
+        }
+    }
+
+    cnt=min(ans1,min(ans2,ans3));
+    if(cnt==INT_MAX)
+    {
+        ct<<-1<<ed;
+        return ;
+    }
+
+    ct<<abs(cnt-0)<<ed;
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t;
+    cin>>t;
+    //t=1;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
