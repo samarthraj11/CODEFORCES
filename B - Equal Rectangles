@@ -1,0 +1,100 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    cin>>x;
+
+    n=4*x;
+
+    map<ll,ll> mp;
+
+    ll a[n];
+    lala
+    {
+        cin>>a[i];
+        mp[a[i]]++;
+
+    }
+
+    vi v;
+
+    for(auto i:mp)
+    {
+        k=i.ss/2;
+        while(k--)
+        {
+            v.pb(i.ff);
+        }
+    }
+
+    sort(v.begin(),v.end());
+
+//    for(auto i:v)
+//    {
+//        ct<<i<< " ";
+//    }
+
+    vi w;
+
+    for(ll i=0;i<v.sz/2;i++)
+    {
+        mx=v[i]*v[v.sz-1-i];
+        w.pb(mx);
+    }
+
+    if(w.sz != x)
+    {
+        ct<< "NO"<<ed;
+        return ;
+    }
+
+    for(ll i=0;i<w.sz;i++)
+    {
+        if(w[0]!=w[i])
+        {
+            ct<< "NO"<<ed;
+            return ;
+        }
+    }
+
+    ct<< "YES"<<ed;
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
