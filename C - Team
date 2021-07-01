@@ -1,0 +1,123 @@
+#include <bits/stdc++.h>
+#define ll    long long
+#define pb    push_back
+#define ld    long double
+#define sz    size()
+#define lala  for(ll i=0;i<n;i++)
+#define pll   pair<ll,ll>
+#define ed    "\n"
+#define ct    cout
+#define m_p   make_pair
+#define vi    vector<ll>
+#define vc    vector<char>
+#define ff    first
+#define ss    second
+#define mod   1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    cin>>n>>m;
+    // ll a[n];
+
+    if(((2*n)+2 < m ) || n-1 > m )
+    {
+        ct<<-1<<ed;
+        return ;
+
+    }
+
+    if(n>m)
+    {
+        while(m)
+        {
+
+            ct<< "01";
+            m--;
+        }
+        ct<<0;
+        return ;
+    }
+
+    if((2*n) <= m)
+    {
+        ll nn=n;
+        while(n > 0)
+        {
+            ct<<110;
+            n--;
+        }
+
+        if((2*nn) == m-2)
+        {
+            ct<<11;
+
+        }
+        else if((2*nn) == m-1)
+        {
+            ct<<1;
+        }
+
+        return ;
+    }
+
+    if(m == (n*2 +1))
+    {
+        s.pb('1');
+        m--;
+    }
+    if(m == (n*2 + 2))
+    {
+        s.pb('1');
+        s.pb('1');
+        m-=2;
+    }
+
+    ll diff=m-n;
+    ll nn=diff;
+
+    while(diff--)
+    {
+        s.pb('0');
+        s.pb('1');
+        s.pb('1');
+    }
+
+    n=n-nn;
+
+    while(n--)
+    {
+        s.pb('0');
+        s.pb('1');
+    }
+
+    ct<<s<<ed;
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
