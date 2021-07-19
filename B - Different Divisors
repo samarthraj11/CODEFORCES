@@ -1,0 +1,124 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define lala          for(ll i=0;i<n;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vvi           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+//    cin>>n;
+    //ll a[n];
+
+    n=30000;
+
+    vi v;
+
+    while(n>0)
+    {
+        ash=0;
+
+        for(ll i=2;i*i<=n;i++)
+        {
+            if(n%i==0)
+            {
+                ash=1;
+            }
+        }
+
+        if(ash==0)
+        {
+            v.pb(n);
+
+        }
+        n--;
+
+
+    }
+    sort(v.begin(),v.end());
+
+//    for(auto i:v)
+//    {
+//        ct<<i<< " ";
+//    }
+//    ct<<ed;
+
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll d;
+        cin>>d;
+
+        if(d==1)
+        {
+            ct<<6<<ed;
+            continue;
+        }
+        ll aa = lower_bound(v.begin(),v.end(),d+1) - v.begin() - 1;
+    //    ct<<aa<< " ";
+    //    ct<<v[aa]<<ed;
+
+        if(v[aa] == d+1)
+        {
+            cnt=v[aa];
+        }
+        else
+        {
+            cnt=v[aa+1];
+        }
+        //ct<<cnt<<ed;
+
+        ll bb = lower_bound(v.begin(),v.end(),cnt+d) - v.begin() - 1;
+
+        if(v[bb] == cnt+d)
+        {
+            mx=v[bb];
+        }
+        else
+        {
+            mx=v[bb+1];
+        }
+        //ct<<mx<<ed;
+
+        ct<<mx*cnt<<ed;
+
+    }
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
