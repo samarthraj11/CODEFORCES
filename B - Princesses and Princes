@@ -1,0 +1,138 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define lala          for(ll i=0;i<n;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vvi           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=-1,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    cin>>n;
+    //ll a[n];
+    vector<vi> vv;
+    vi v;
+
+    for(ll i=0;i<n;i++)
+    {
+        cin>>k;
+        for(ll j=0;j<k;j++)
+        {
+            cin>>x;
+            v.pb(x);
+        }
+        vv.pb(v);
+        v.clear();
+    }
+
+    //ct<<ed<<ed<<ed;
+    v.clear();
+
+    map<ll,ll> mp;
+
+    vvi ans;
+
+    for(ll i=0;i<n;i++)
+    {
+
+
+        for(ll j=0;j<vv[i].sz;j++)
+        {
+            ll q=vv[i][j];
+            mp[q]++;
+            if(mp[q]==1)
+            {
+                ans.pb({i+1,q});
+                ash=1;
+                break ;
+            }
+
+        }
+
+
+    }
+
+    if(ans.sz==n)
+    {
+        ct<< "OPTIMAL"<<ed;
+        return ;
+    }
+
+    vi gl(n+1,0),by(n+1,0);
+    gl[0]=1;
+    by[0]=1;
+
+    for(auto i:ans)
+    {
+        gl[i.ff]=1;
+        by[i.ss]=1;
+    }
+
+    ll xx=-1,yy=-1;
+
+    for(ll i=0;i<n+1;i++)
+    {
+        if(gl[i]==0)
+        {
+            xx=i;
+            break;
+        }
+    }
+
+    for(ll i=0;i<n+1;i++)
+    {
+        if(by[i]==0)
+        {
+            yy=i;
+            break;
+        }
+    }
+
+    if(xx==-1 || yy==-1)
+    {
+        ct<< "OPTIMAL"<<ed;
+        return ;
+    }
+
+    ct<< "IMPROVE"<<ed<<xx<< " "<<yy<<ed;
+
+
+
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
