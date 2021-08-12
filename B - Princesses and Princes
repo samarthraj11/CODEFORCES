@@ -76,11 +76,7 @@ void jai_bajrangbali()
 
     }
 
-    if(ans.sz==n)
-    {
-        ct<< "OPTIMAL"<<ed;
-        return ;
-    }
+
 
     vi gl(n+1,0),by(n+1,0);
     gl[0]=1;
