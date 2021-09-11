@@ -1,0 +1,200 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define lala          for(ll i=0;i<n;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vvi           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+bool allsame(string s)
+{
+
+    for(ll i=1;i<s.sz;i++)
+    {
+        if(s[i]!=s[i-1])
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+bool decreasing(string s)
+{
+    for(ll i=1;i<s.sz;i++)
+    {
+        if(s[i] >= s[i-1])
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+
+    unordered_map<ll,string> mp;
+    vector<vi> vv;
+    cin>>n;
+    //ll a[n];
+    lala
+    {
+        cin>>x>>s;
+        mp.insert({i,s});
+        vi v(3,0);
+        while(x--)
+        {
+            string p,ans;
+            cin>>p;
+            ans.pb(p[0]);
+            ans.pb(p[1]);
+            ans.pb(p[3]);
+            ans.pb(p[4]);
+            ans.pb(p[6]);
+            ans.pb(p[7]);
+
+            if(allsame(ans))
+            {
+                v[0]++;
+            }
+            else if(decreasing(ans))
+            {
+                v[1]++;
+            }
+            else
+            {
+                v[2]++;
+            }
+
+        }
+
+        vv.pb(v);
+    }
+//    ct<<vv.sz<<ed;
+//    for(ll i=0;i<vv.sz;i++)
+//    {
+//        for(ll j=0;j<vv[i].sz;j++)
+//        {
+//            ct<<vv[i][j]<< " ";
+//        }
+//        ct<<ed;
+//    }
+//    for(auto i:mp)
+//    {
+//        ct<<i.ff<< " "<<i.ss<<ed;
+//    }
+
+    ll maxi1=INT_MIN,maxi2=INT_MIN,maxi3=INT_MIN;
+
+    vector<string>  pizzawla,taxiwla,dalal;
+
+    for(ll i=0;i<vv.sz;i++)
+    {
+        maxi1=max(maxi1,vv[i][0]);
+        maxi2=max(maxi2,vv[i][1]);
+        maxi3=max(maxi3,vv[i][2]);
+
+    }
+    for(ll i=0;i<vv.sz;i++)
+    {
+        if(maxi1==vv[i][0])
+        {
+            taxiwla.pb(mp[i]);
+        }
+        if(maxi2==vv[i][1])
+        {
+            pizzawla.pb(mp[i]);
+        }
+        if(maxi3==vv[i][2])
+        {
+            dalal.pb(mp[i]);
+        }
+
+    }
+    //ct<<taxiwla.sz<< " "<<pizzawla.sz<< " "<<dalal.sz<<ed;
+    if(taxiwla.sz==1)
+    {
+        ct<< "If you want to call a taxi, you should call: "<<taxiwla[0]<< "."<<ed;
+    }
+    else
+    {
+        ct<< "If you want to call a taxi, you should call: ";
+        for(ll i=0;i<taxiwla.sz-1;i++)
+        {
+            ct<<taxiwla[i]<< ", ";
+        }
+        ct<<taxiwla[taxiwla.sz-1]<< "."<<ed;
+    }
+    if(pizzawla.sz==1)
+    {
+        ct<< "If you want to order a pizza, you should call: "<<pizzawla[0]<< "."<<ed;
+    }
+    else
+    {
+        ct<< "If you want to order a pizza, you should call: ";
+        for(ll i=0;i<pizzawla.sz-1;i++)
+        {
+            ct<<pizzawla[i]<< ", ";
+        }
+        ct<<pizzawla[pizzawla.sz-1]<< "."<<ed;
+    }
+    if(dalal.sz==1)
+    {
+        ct<< "If you want to go to a cafe with a wonderful girl, you should call: "<<dalal[0]<< "."<<ed;
+
+    }
+    else
+    {
+        ct<< "If you want to go to a cafe with a wonderful girl, you should call: ";
+        for(ll i=0;i<dalal.sz-1;i++)
+        {
+            ct<<dalal[i]<< ", ";
+        }
+        ct<<dalal[dalal.sz-1]<<"."<<ed;
+    }
+
+
+
+
+
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
