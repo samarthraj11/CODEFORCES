@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define lala          for(ll i=0;i<n;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vvi           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    cin>>s;
+    n=s.sz;
+    //ll a[n];
+    vi metal,heavy;
+
+    for(ll i=0;i<n;)
+    {
+        if(s.substr(i,5)=="heavy")
+        {
+            heavy.pb(i);
+            i+=5;
+        }
+        else if(s.substr(i,5)=="metal")
+        {
+            metal.pb(i);
+            i+=5;
+        }
+        else
+        {
+            i++;
+        }
+    }
+
+//    for(auto i:heavy)
+//    {
+//        ct<<i<< " ";
+//    }
+//    ct<<ed;
+//    for(auto i:metal)
+//    {
+//        ct<<i<< " ";
+//    }
+//    ct<<ed;
+
+    for(ll i=0;i<heavy.sz;i++)
+    {
+        ll xx= upper_bound(metal.begin(),metal.end(),heavy[i]) - metal.begin();
+
+        cnt=cnt + (metal.sz-xx);
+    }
+    ct<<cnt<<ed;
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
