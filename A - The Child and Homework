@@ -1,0 +1,115 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define lala          for(ll i=0;i<n;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vvi           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    //cin>>n;
+    //ll a[n];
+    ll maxi=INT_MIN, mini=INT_MAX;
+    vector<pair<string , ll>> v;
+
+    for(ll i=0;i<4;i++)
+    {
+        cin>>s;
+        v.pb({s,s.sz-2});
+        mini=min(mini,(ll)s.sz-2);
+        maxi=max(maxi,(ll)s.sz-2);
+
+
+    }
+    //ct<<maxi<< " "<<mini<<ed;
+
+    cnt=0,res=0;
+
+    for(ll i=0;i<4;i++)
+    {
+        if((mini*2) <= v[i].ss)
+        {
+            cnt++;
+
+        }
+        if(mini==v[i].ss)
+        {
+            s=v[i].ff[0];
+        }
+    }
+
+    string p;
+
+    for(ll i=0;i<4;i++)
+    {
+        if(maxi >= v[i].ss*2)
+        {
+            res++;
+
+        }
+        if(v[i].ss==maxi)
+        {
+            p=v[i].ff[0];
+        }
+    }
+
+//    for(auto i:v)
+//    {
+//        ct<<i.ff<< " "<<i.ss<<ed;
+//    }
+//    ct<<cnt<< " "<<res<<ed;
+
+
+    if(cnt==3 && res < 3)
+    {
+        ct<<s<<ed;
+        return ;
+    }
+
+    if(res==3 && cnt < 3)
+    {
+        ct<<p<<ed;
+        return ;
+    }
+
+    ct<<'C'<<ed;
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
+
