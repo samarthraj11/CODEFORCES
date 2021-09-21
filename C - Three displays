@@ -1,0 +1,108 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    cin>>n;
+    ll a[n],price[n];
+    foo(i,0,n)
+    {
+        cin>>a[i];
+    }
+    foo(i,0,n)
+    {
+        cin>>price[i];
+    }
+
+    ll ans = INT_MAX;
+
+     for(ll i=1;i<n-1;i++)
+     {
+         ll small =-1;
+         ll large = -1;
+
+         sum=price[i];
+        ll mini = INT_MAX;
+         for(ll j=0;j<i;j++)
+         {
+            if(a[j] < a[i])
+            {
+                small =1;
+                mini=min(mini,price[j]);
+
+            }
+         }
+         if(small ==1)
+         {
+             sum += mini;
+
+         }
+
+
+         mini = INT_MAX;
+
+         for(ll k=i+1;k<n;k++)
+         {
+             if(a[i] < a[k])
+             {
+                 large =1;
+                 mini=min(mini,price[k]);
+             }
+
+         }
+
+         if(large ==1)
+         {
+             sum += mini;
+         }
+
+         if(small != -1 && large != -1)
+         {
+             ans = min(ans, sum);
+         }
+     }
+
+     ct<<(ans == INT_MAX ? -1 : ans)<<ed;
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
