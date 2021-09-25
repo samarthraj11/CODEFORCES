@@ -1,0 +1,90 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    cin>>s;
+    n=s.sz;
+    //ll a[n];
+    vi ab,ba;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i] == 'A' && s[i+1]== 'B')
+        {
+            cnt++;
+            ab.pb(i);
+        }
+        else if(s[i] == 'B' && s[i+1] == 'A')
+        {
+            res++;
+            ba.pb(i);
+
+        }
+    }
+
+    if(ab.sz == 0 || ba.sz == 0)
+    {
+        ct<< "NO"<<ed;
+        return ;
+    }
+
+    x = abs(ab[0] - ba[ba.sz-1]);
+    x = max(x,abs(ab[ab.sz-1] - ba[0]));
+
+//    for(auto i:ab)
+//    {
+//        ct<<i<< " ";
+//    }
+//    ct<<ed;
+//    for(auto i:ba)
+//    {
+//        ct<<i<< " ";
+//    }
+//    ct<<ed;
+
+
+
+
+    ct<<(x > 1 ? "YES" : "NO")<<ed;
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
