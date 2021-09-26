@@ -1,0 +1,120 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+ll change_krde_bhai(string str)
+{
+    ll temp=0;
+    for (ll i=0;i<str.length();i++)
+    {
+        temp = temp * 10 + (str[i] - '0');
+    }
+    return temp;
+}
+
+
+void jai_bajrangbali()
+{
+    ll n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s,ans;
+
+    cin>>s;
+    n=s.sz;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i] == '0' || s[i] == '8')
+        {
+            ct<< "YES"<<ed<<s[i]<<ed;
+            return ;
+        }
+    }
+
+    for(ll i=0;i<n-1;i++)
+    {
+        ans.pb(s[i]);
+
+        for(ll j=i+1;j<n;j++)
+        {
+            ans.pb(s[j]);
+
+            x= change_krde_bhai(ans);
+
+            if(x%8 == 0)
+            {
+                ct<< "YES"<<ed<<ans<<ed;
+                return ;
+            }
+            ans.pop_back();
+        }
+        ans.pop_back();
+    }
+
+    ans.clear();
+
+    for(ll i=0;i<n-2;i++)
+    {
+        ans.pb(s[i]);
+        for(ll j=i+1;j<n-1;j++)
+        {
+            ans.pb(s[j]);
+
+            for(ll k=j+1;k<n;k++)
+            {
+                ans.pb(s[k]);
+                x = change_krde_bhai(ans);
+                //ct<<x<<ed;
+                if(x%8 == 0)
+                {
+                    ct<< "YES"<<ed<<ans<<ed;
+                    return ;
+                }
+                ans.pop_back();
+
+            }
+            ans.pop_back();
+
+        }
+
+        ans.pop_back();
+    }
+
+
+    ct<< "NO"<<ed;
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
