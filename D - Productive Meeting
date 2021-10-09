@@ -1,0 +1,98 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+    priority_queue<pll> pq;
+    cin>>n;
+    ll a[n];
+    foo(i,0,n)
+    {
+        cin>>a[i];
+        if(a[i] != 0)
+        {
+            pq.push({a[i],i+1});
+
+        }
+    }
+
+    pll xx,yy;
+
+    vpll v;
+
+    while(!pq.empty())
+    {
+        xx = pq.top();
+        pq.pop();
+
+        if(!pq.empty())
+        {
+            yy = pq.top();
+            pq.pop();
+            v.pb({xx.ss,yy.ss});
+
+            if(xx.ff - 1 > 0)
+            {
+                pq.push({xx.ff-1,xx.ss});
+            }
+            if(yy.ff - 1 > 0)
+            {
+                pq.push({yy.ff-1,yy.ss});
+            }
+
+        }
+        else
+        {
+            break;
+        }
+
+    }
+
+
+    ct<<v.sz<<ed;
+    for(auto i:v)
+    {
+        ct<<i.ff<< " "<<i.ss<<ed;
+    }
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
