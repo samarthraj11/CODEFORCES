@@ -1,0 +1,77 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll           vector<pll>
+#define ff            first
+#define ss            second
+#define mod           1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+
+void jai_bajrangbali()
+{
+    ll k,n,m,x,y,cnt=0,res=0,mx=1;
+    ll sum=0;
+    bool ash=false;
+    string s;
+
+    cin>>n>>k;
+    ll a[n];
+    foo(i,0,n)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+n);
+    ll pre[n];
+    pre[0] = a[0];
+
+    foo(i,1,n)
+    {
+        pre[i] = pre[i-1] + a[i];
+    }
+
+    ll ans = INT_MAX;
+    foo(i,0,n)
+    {
+        x = k - pre[n-i-1]  + a[0];
+        y = x/(i+1);
+        if((y*(i + 1)) > x)
+        {
+            y--;
+        }
+        y = a[0] - y;
+        ans = min(ans,max(0ll,y) + i);
+    }
+        ct<<ans<<ed;
+
+
+
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
+
