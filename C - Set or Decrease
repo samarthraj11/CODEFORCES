@@ -48,6 +48,7 @@ void jai_bajrangbali()
     }
 
     ll ans = INT_MAX;
+    
     foo(i,0,n)
     {
         x = k - pre[n-i-1]  + a[0];
