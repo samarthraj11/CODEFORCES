@@ -1,0 +1,83 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+ll totalFactors(ll n, ll b)
+{
+    set<ll> st;
+    for(ll i=1;i<=sqrt(n);i++)
+    {
+        if(n%i == 0)
+        {
+            if(i > b)
+            {
+                st.insert(i);
+            }
+            if(n/i > b)
+            {
+                st.insert(n/i);
+            }
+        }
+    }
+    return st.sz;
+}
+
+void jai_bajrangbali()
+{
+    ll a,b;
+    cin>>a>>b;
+    // ll a[n];
+
+    if(a < b)
+    {
+        ct<<0<<ed;
+        return ;
+    }
+    if(a == b)
+    {
+        ct<<"infinity"<<ed;
+        return ;
+    }
+
+    ct<<totalFactors(a-b,b)<<ed;
+
+
+    
+}
+
+int main()
+{
+    bahut_tezz();
+    long long t=1;
+    //cin>>t;
+    while(t--)jai_bajrangbali();
+
+    return 0;
+}
