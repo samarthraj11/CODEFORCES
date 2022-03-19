@@ -1,0 +1,108 @@
+#include <bits/stdc++.h>
+#define ll            unsigned long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+ll nCrModp(ll n, ll r, ll p) 
+{ 
+    // Optimization for the cases when r is large 
+    if (r > n - r) 
+        r = n - r; 
+  
+    // The array C is going to store last row of 
+    // pascal triangle at the end. And last entry 
+    // of last row is nCr 
+    ll C[r + 1]; 
+    memset(C, 0, sizeof(C)); 
+  
+    C[0] = 1; // Top row of Pascal Triangle 
+  
+    // One by constructs remaining rows of Pascal 
+    // Triangle from top to bottom 
+    for (ll i = 1; i <= n; i++) { 
+  
+        // Fill entries of current row using previous 
+        // row values 
+        for (ll j = min(i, r); j > 0; j--) 
+  
+            // nCj = (n-1)Cj + (n-1)C(j-1); 
+            C[j] = (C[j] + C[j - 1]) % p; 
+    } 
+    return C[r]; 
+} 
+
+
+void jai_bajrangbali()
+{
+	ll n,k;
+	cin>>n>>k;
+	ll a[n];
+	map<ll,ll> req,mp;
+	foo(i,0,n)
+	{
+		cin>>a[i];
+		mp[a[i]]++;
+	}
+
+	ll cnt = 1;
+	sort(a,a+n,greater<>());
+	for(ll i=0;i<k;i++)
+	{
+		req[a[i]]++;
+	}
+
+	for(auto i:req)
+	{
+		// ll xx = mp[i.ff]
+		// ct<<i.ff<< " "<<i.ss<<ed;
+		ll x = (nCrModp(mp[i.ff],i.ss,modulo));
+		// ct<<mp[i.ff]<< " "<<i.ss<<ed;
+		cnt *= x;
+		cnt %= modulo;
+	}
+
+	ct<<cnt<<ed;
+
+	
+
+
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	cin>>t;
+	while(t--)jai_bajrangbali();
+
+	return 0;
+}
