@@ -1,0 +1,78 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+
+void jai_bajrangbali()
+{
+	ll n;
+	cin>>n;
+	ll a[n];
+	foo(i,0,n)
+	{
+		cin>>a[i];
+	}
+	ll b[n];
+	if(n != a[0] && n != a[n-1])
+	{
+		ct<<-1<<ed;
+		return ;
+	}
+	deque<ll> d;
+	for(ll i=0;i<(n/2);i++)
+	{
+		d.push_front(a[i]);
+		d.push_back(a[n-i-1]);
+
+	}
+	if(n%2)
+	{
+		d.push_front(a[n/2]);
+	}
+	for(auto i:d)
+	{
+		ct<<i<< " ";
+	}
+	ct<<ed;
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	cin>>t;
+	while(t--)jai_bajrangbali();
+
+	return 0;
+}
