@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+bool possible(ll hc, ll dc, ll hm, ll dm, ll ww, ll aa, ll w, ll a)
+{
+	hc = hc + (aa*a);
+	dc = dc + (ww*w);
+	ll man = hm/dc;
+	if(hm%dc) man++;
+	ll monster = hc/dm;
+	if(hc%dm) monster++;
+	return (man <= monster);
+}
+
+void jai_bajrangbali()
+{
+	ll dc,hc,hm,dm,k,w,a;
+	cin>>hc>>dc>>hm>>dm>>k>>w>>a;
+	for(ll i=0;i<=k;i++)
+	{
+		if(possible(hc,dc,hm,dm,i,k-i,w,a))
+		{
+			ct<< "YES"<<ed;
+			return ;
+		}
+	}
+
+	ct<< "NO"<<ed;
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	cin>>t;
+	while(t--)jai_bajrangbali();
+
+	return 0;
+}
