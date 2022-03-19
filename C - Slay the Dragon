@@ -1,0 +1,93 @@
+#include <bits/stdc++.h>
+#define ll            long long 
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+constexpr ll INF = 2e18;
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+ll check_price(ll x,ll y, ll atck, ll dfnc)
+{
+	ll cnt = 0;
+	cnt += (x > atck ? x - atck : 0);
+	cnt += (y > dfnc ? y - dfnc : 0);
+	return cnt;
+}
+
+void jai_bajrangbali()
+{
+	ll n,k;
+	cin>>n;
+	ll a[n];
+	ll maxi = INT_MIN;
+	ll sum = 0;
+	foo(i,0,n)
+	{
+		cin>>a[i];
+		maxi = max(maxi,a[i]);
+		sum += a[i];
+	}
+	sort(a,a+n);
+	ll q;
+	cin>>q;
+	while (q--)
+	{
+		ll x,y;
+		cin>>x>>y;
+		ll tsum = sum;
+		ll p1 = INF, p2 = INF, p3 = INF;
+		ll idx = upper_bound(a,a+n,x) - a;
+		if(idx == n)
+		{
+			ll at = a[idx - 1];
+			p1 = check_price(x,y,at,tsum - at);
+		}
+		else
+		{
+			p2 = check_price(x,y,a[idx],tsum - a[idx]);
+			if(idx != 0)
+			{
+				p3 = check_price(x,y,a[idx-1],tsum - a[idx - 1]);
+			}
+		}
+		ct<<min({p1,p2,p3})<<ed;
+	}
+	
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	//cin>>t;
+	while(t--)jai_bajrangbali();
+
+	return 0;
+}
