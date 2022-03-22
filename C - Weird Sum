@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+ll sumPairs(vi v)
+{
+    // final result
+    ll sum = 0;
+    for (ll i=v.sz-1; i>=0; i--)
+        sum += i*v[i] - (v.sz-1-i)*v[i];
+    return sum;
+}
+
+ll kuch_krle_bhai(map<ll,vector<ll>>& mp)
+{
+	ll sum = 0;
+	for(auto it:mp)
+	{
+		vector<ll> v = it.ss;
+		sort(all(v));
+		sum += sumPairs(v);
+	}
+	return sum;
+}
+
+void jai_bajrangbali()
+{
+	ll n,m;
+	cin>>n>>m;
+	map<ll,vector<ll>> mp_row,mp_col;
+	foo(i,0,n)
+	{
+		foo(j,0,m)
+		{
+			ll x;
+			cin>>x;
+			mp_row[x].pb(i);
+			mp_col[x].pb(j);
+		}
+	}
+
+	ct<<kuch_krle_bhai(mp_row) + kuch_krle_bhai(mp_col)<<ed;
+
+	
+	
+
+
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	//cin>>t;
+	while(t--)jai_bajrangbali();
+
+	return 0;
+}
