@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+vi depth;
+vi subTreeSz;
+
+void dfs(vector<ll> adj[],ll child, ll par)
+{
+	depth[child] = depth[par] + 1;
+	subTreeSz[child] = 1;
+	for(auto i:adj[child])
+	{
+		if(i == par) continue;
+		dfs(adj,i,child);
+		subTreeSz[child] += subTreeSz[i];
+	}
+}
+
+void jai_bajrangbali()
+{
+	ll n,k;
+	cin>>n>>k;
+	vector<ll> adj[n+1];
+	depth.assign(n+1,0);
+	subTreeSz.assign(n+1,0);
+	foo(i,0,n-1)
+	{
+		ll x,y;
+		cin>>x>>y;
+		adj[x].pb(y);
+		adj[y].pb(x);
+	}
+
+	dfs(adj,1,0);
+	vi v;
+	for(ll i=1;i<=n;i++)
+	{
+		v.pb(subTreeSz[i] - depth[i]);
+	}
+	sort(all(v),greater<>());
+	ll ans = 0;
+	for(ll i=0;i<n-k;i++)
+	{
+		ans += v[i];
+	}
+	ct<<ans<<ed;
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	//cin>>t;
+	while(t--)jai_bajrangbali();
+
+	return 0;
+}
