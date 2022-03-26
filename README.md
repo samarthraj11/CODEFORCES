@@ -1,2 +1,2 @@
 # CODES
-solutions of codeforces problem in c++
+solutions of codeforces problem in cpp
