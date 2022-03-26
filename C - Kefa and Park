@@ -86,8 +86,7 @@ void jai_bajrangbali()
 			ans++;
 		}
 	}
-	ct<<ans<<ed;	
-	
+	ct<<ans<<ed;
 
 
 }
