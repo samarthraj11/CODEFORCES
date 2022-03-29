@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+void dfs(vector<ll> adj[],vector<ll>& parentVec,vector<ll>& subtree_size,ll curr,ll par)
+{
+	subtree_size[curr] = 1;
+	parentVec[curr] = par;
+	for(auto it:adj[curr])
+	{
+		if(parentVec[it]) continue;
+		dfs(adj,parentVec,subtree_size,it,curr);
+		subtree_size[curr] += (subtree_size[it]);
+	}
+}
+
+void jai_bajrangbali()
+{
+	ll n,a,b;
+	cin>>n>>a>>b;
+	vi subtree_size(n+1,0);
+	vector<ll> adj[n+1];
+	foo(i,0,n-1)
+	{
+		ll x,y;
+		cin>>x>>y;
+		adj[x].pb(y);
+		adj[y].pb(x);
+	}
+	vi parentVec(n+1,0);
+	dfs(adj,parentVec,subtree_size,a,-1);
+	ll ans = 0;
+	ll z=b;
+    while(parentVec[z]!=a) 
+	{
+		z=parentVec[z];
+	}
+	ans = n*(n-1) - ((subtree_size[a] - subtree_size[z])*subtree_size[b]);
+	ct<<ans<<ed;
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	//cin>>t;
+	while(t--)jai_bajrangbali();
+	return 0;
+}
