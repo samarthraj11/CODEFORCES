@@ -1,0 +1,93 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+vi v;
+void dfs(vector<ll> adj[],vector<ll>& leaf,ll curr, ll par)
+{
+	leaf[curr] = 1;
+	v.pb(curr);
+	for(auto child:adj[curr])
+	{
+		if(child == par) continue;
+		dfs(adj,leaf,child,curr);
+		leaf[curr] += leaf[child];
+	}
+}
+
+void jai_bajrangbali()
+{
+	ll n,q;
+	cin>>n>>q;
+	vector<ll> adj[n+1];
+	vi leaf(n+1,0);
+	for(ll i=2;i<=n;i++)
+	{
+		ll x;
+		cin>>x;
+		adj[x].pb(i);
+		adj[i].pb(x);
+	}
+	dfs(adj,leaf,1,0);
+	map<ll,ll> mp;
+	for(ll i=0;i<v.sz;i++)
+	{
+		mp[v[i]] = i;
+	}
+	foo(i,0,q)
+	{
+		ll u,k;
+		cin>>u>>k;
+		ll total_child = leaf[u];
+		if(k > total_child)
+		{
+			ct<<-1<<ed;
+		}
+		else
+		{
+			ct<<v[mp[u] + k - 1]<<ed;
+		}
+
+	}
+	
+
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	//cin>>t;
+	while(t--)jai_bajrangbali();
+	return 0;
+}
