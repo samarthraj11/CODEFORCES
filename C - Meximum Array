@@ -1,0 +1,81 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+
+void jai_bajrangbali()
+{
+	ll n;
+	cin>>n;
+	ll a[n];
+	map<ll,ll> mp;
+	multiset<ll> ms;
+	foo(i,0,n)
+	{
+		cin>>a[i];
+		mp[a[i]]++;
+	}
+	ll cur_mex = 0;
+	vi ans;
+	for(ll i=0;i<n;i++)
+	{
+		ms.insert(a[i]);
+		while(ms.count(cur_mex)) cur_mex++;
+		if(mp[cur_mex] <= 0)
+		{
+			ans.pb(cur_mex);
+			cur_mex = 0;
+			ms.clear();
+		}
+		mp[a[i]]--;
+	}
+	if(cur_mex)
+	{
+		ans.pb(cur_mex);
+	}
+	ct<<ans.sz<<ed;
+	for(auto i:ans)
+	{
+		ct<<i<< " ";
+	}
+	ct<<ed;
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	cin>>t;
+	while(t--)jai_bajrangbali();
+	return 0;
+}
