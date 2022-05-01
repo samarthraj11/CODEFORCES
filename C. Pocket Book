@@ -1,0 +1,73 @@
+#include <bits/stdc++.h>
+#define ll            long long
+#define pb            push_back
+#define ld            long double
+#define sz            size()
+#define foo(i,a,b)    for (ll i=a;i<b;i++)
+#define pll           pair<ll,ll>
+#define ed            "\n"
+#define ct            cout
+#define m_p           make_pair
+#define vi            vector<ll>
+#define vpll          vector<pll>
+#define ff            first
+#define ss            second
+#define all(x)        x.begin(),x.end()
+#define pqmax         priority_queue<ll>
+#define pqmin         priority_queue<ll,vector<ll>,greater<ll>>
+#define modulo        1000000007
+
+
+using namespace std;
+
+void bahut_tezz()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+
+void jai_bajrangbali()
+{
+	ll n,m;
+	cin>>n>>m;
+	set<char> st;
+	char a[n][m];
+	for(ll i=0;i<n;i++)
+	{
+		string s;
+		cin>>s;
+		for(ll j=0;j<m;j++)
+		{
+			a[i][j] = s[j];
+		}
+	}
+	ll ans = 1;
+	for(ll i=0;i<m;i++)
+	{
+		st.clear();
+		for(ll j=0;j<n;j++)
+		{
+			st.insert(a[j][i]);
+		}
+		ans = ans*st.sz;
+		ans = ans%modulo;
+	}
+	ct<<ans<<ed;
+
+}
+
+int main()
+{
+	bahut_tezz();
+	long long t=1;
+	//cin>>t;
+	while(t--)jai_bajrangbali();
+	return 0;
+}
